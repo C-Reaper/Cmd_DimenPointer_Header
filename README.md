@@ -1,193 +1,64 @@
-# Cmd_DimenFakePointer_Header
+# Project README
 
+## Overview
+This project is a C application that demonstrates the use of a multi-dimensional data structure to store and print human names along with their IQ scores. The application supports different platforms including Linux, Windows (using Wine), WebAssembly, and cross-compilation for Windows on Linux.
 
-## Project Overview
+## Features
+- **Multi-Dimensional Data Structure**: The program uses a pointer to an array of pointers, each representing a 2D array that stores `Human` structures.
+- **Dynamic Memory Allocation**: Memory is dynamically allocated for the multi-dimensional structure.
+- **Memory Management**: Proper memory allocation and deallocation using `malloc`, `calloc`, and `free`.
+- **Custom Data Structure**: A custom `Human` structure to store each individual's name, IQ score, and dimensions.
 
-This project implements specialized functionality related to dimenfakepointer_header.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for dimenfakepointer_header
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
-
-### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
-- Make utility
-- Standard development tools
-
-### Build Steps
-
-1. Navigate to project directory:
-```bash
-cd Cmd_DimenFakePointer_Header
+## Project Structure
 ```
-
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
-
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
-
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Cmd_DimenFakePointer_Header/
+Project/
+├── build/              # .exe files produced by Main.c
 ├── src/
 │   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
+│   └── *.h             # stand alone Header-based C-files, without *.c files that implement it
+├── Makefile.linux      # Linux Build configuration
+├── Makefile.windows    # Windows Build configuration
+├── Makefile.wine       # Wine Build configuration
 └── README.md           # This file
 ```
 
-## Technical Details
+### Prerequisites
+- **C/C++ Compiler and Debugger**: GCC, Clang, or any C compiler that supports the specified flags.
+- **Make Utility**: For building the project.
+- **Standard Development Tools**: Required for setting up the development environment.
 
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
+## Build & Run
+### Linux
+To build and run on Linux:
+```sh
+cd Project/
+make -f Makefile.linux all
+make -f Makefile.linux exe
+```
 
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
+### Windows (using Wine)
+To build and run on Windows using Wine:
+```sh
+cd Project/
+make -f Makefile.wine all
+make -f Makefile.wine exe
+```
 
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
+### WebAssembly
+To build and run the project for WebAssembly:
+```sh
+cd Project/
+make -f Makefile.web all
+make -f Makefile.web exe
+```
 
-## Development Notes
+### Windows (cross-compilation on Linux)
+To build a Windows executable on Linux using Wine:
+```sh
+cd Project/
+make -f Makefile.wine clean
+make -f Makefile.wine all
+make -f Makefile.wine exe
+```
 
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+This project provides a clear and concise example of how to handle multi-dimensional data structures, manage memory, and utilize different build environments.
